@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Earthquakes</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">  
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+  <div style="margin-left: 6%;margin-right: 6%;">
+    <h1 style="margin-top: 20px;">Zemljotresi</h1>
+    <form action="">
+      <div class="row">
+        <label for="city">Grad:</label>
+        <input type="text" class="form-control" id="city" placeholder="Unesite naziv Grada">
+      </div>
+      <div class="row">
+        <div class="col" style="padding-left: 0px;">
+          <label for="radius">Raduis (km):</label>
+          <input type="number" class="form-control" id="radius" placeholder="Unesite Radius">
+        </div>
+        <div class="col">
+          <label for="startDate">Od Datuma:</label>
+          <input type="date" class="form-control" id="startDate" placeholder="Start Date">
+        </div>
+        <div class="col">
+          <label for="endDate">Do Datuma:</label>
+          <input type="date" class="form-control" id="endDate" placeholder="End Date">
+        </div>
+      </div>
+      <button id="displayEarthquakes" style="float: right; margin-top:20px;" type="button">Prikazi Zemljotrese</button>
+    </form>
+<div class="container" style="display: block;float: left;margin-top: 50px;">
+    <ul class="pagination" id="tablePagination" style="display: none;float: left;"></ul>
+  </div>
+    <table id="earthquakeTable" style="display:none; float: left;margin-top: 5px;border-spacing: 30px; border-collapse: separate;">
+
+    </table>
+    
+    <div class="container" id="autocompleteDiv" style="display: none;float: left; margin-bottom: 100px;">
+
+      <div class="row">
+        <div class="col" style="padding-left: 0px;">
+          <h3>Izaberite Zemljotrese</h3>
+          <form autocomplete="off" action="">
+            <div class="autocomplete" style="width:300px;">
+              <br>
+              <h4>Unesi Zemljotres: </h4>
+              <input id="earthquakeInput" type="text" name="earthquake" placeholder="Earthquake">
+            </div>
+          </form>
+        </div>
+
+        <div class="col">
+          <h3>Izabrani Zemljotresi:</h3>
+          <ul class="list-group" id="selectedEarthquakes"></ul>
+        </div>
+      </div>
+
+    </div>
+
+    <button type="button" id="btnDetailsPage" style="display: none;margin-bottom: 100px;" class="btn btn-primary btn-lg btn-block">Detaljnije
+      o izabranim zemljotresima</button>
+  </div>
+
+
+  <script src="script1.0.js"> </script>
+</body>
+
+</html>
